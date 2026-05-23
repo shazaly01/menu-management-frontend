@@ -16,9 +16,9 @@ const BackupsList = () => import('@/views/settings/BackupsList.vue')
 
 // --- استيراد صفحات نظام المطعم والكاشير ---
 const PublicMenuView = () => import('@/views/menu/PublicMenuView.vue')
-const WaiterMenuView = () => import('@/views/waiter/WaiterMenuView.vue')
-const CartView = () => import('@/views/waiter/CartView.vue')
-const RemoteOrdersView = () => import('@/views/orders/RemoteOrdersView.vue')
+// const WaiterMenuView = () => import('@/views/waiter/WaiterMenuView.vue')
+// const CartView = () => import('@/views/waiter/CartView.vue')
+// const RemoteOrdersView = () => import('@/views/orders/RemoteOrdersView.vue')
 
 // شاشة توليد الباركود
 const MenuQRCodeView = () => import('@/views/settings/MenuQRCodeView.vue')
@@ -75,25 +75,25 @@ const routes = [
         meta: { permission: 'backup.view' },
       },
 
-      // --- مسارات نظام المطعم ---
-      {
-        path: 'waiter-menu',
-        name: 'WaiterMenu',
-        component: WaiterMenuView,
-        meta: { permission: 'categories.view' },
-      },
-      {
-        path: 'cart',
-        name: 'CartView',
-        component: CartView,
-        meta: { permission: 'categories.view' },
-      },
-      {
-        path: 'remote-orders',
-        name: 'RemoteOrdersList',
-        component: RemoteOrdersView,
-        meta: { permission: 'remote_orders.view' },
-      },
+      // // --- مسارات نظام المطعم ---
+      // {
+      //   path: 'waiter-menu',
+      //   name: 'WaiterMenu',
+      //   component: WaiterMenuView,
+      //   meta: { permission: 'categories.view' },
+      // },
+      // {
+      //   path: 'cart',
+      //   name: 'CartView',
+      //   component: CartView,
+      //   meta: { permission: 'categories.view' },
+      // },
+      // {
+      //   path: 'remote-orders',
+      //   name: 'RemoteOrdersList',
+      //   component: RemoteOrdersView,
+      //   meta: { permission: 'remote_orders.view' },
+      // },
 
       // مسار شاشة توليد الباركود
       {
