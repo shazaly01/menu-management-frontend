@@ -38,7 +38,7 @@
             {{ restaurantName }}
           </h2>
           <p class="text-sm text-gray-400 mt-1 print:text-gray-600 print:text-lg">
-            امسح الكود اللطيف لعرض المنيو
+            امسح الكود لعرض المنيو
           </p>
         </div>
 
