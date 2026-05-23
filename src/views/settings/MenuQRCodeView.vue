@@ -79,7 +79,7 @@
               d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"
             ></path>
           </svg>
-          طباعة الباركود الفاخر
+          طباعة
         </button>
 
         <button
@@ -121,20 +121,20 @@ const qrCode = new QRCodeStyling({
   height: 300,
   type: 'svg',
   data: menuUrl.value,
-  margin: 10,
+  margin: 12,
   qrOptions: {
     typeNumber: 0,
     mode: 'Byte',
-    errorCorrectionLevel: 'H', // أعلى مستوى حماية لضمان القراءة السريعة حتى لو تعرض الكود لخدوش
+    errorCorrectionLevel: 'Q', // مستوى متزن يضمن القراءة السريعة والدقة العالية
   },
   dotsOptions: {
-    type: 'extra-rounded', // جعل النقاط دائرية وانسيابية مبهجة جداً للمطاعم بدلاً من المربعات الجامدة
+    type: 'dots', // نقاط دائرية هندسية منتظمة وأنيقة جداً بدلاً من الشكل السائل السابق
     gradient: {
       type: 'linear',
       rotation: 45,
       colorStops: [
-        { offset: 0, color: '#1e3a8a' }, // لون أزرق ملكي داكن في البداية لضمان التباين العالي عند القراءة
-        { offset: 1, color: '#3b82f6' }, // يتدرج إلى اللون الأزرق المضيء الجذاب ليعطي لمسة عصرية
+        { offset: 0, color: '#0f172a' }, // لون كحلي فاخر جداً وقريب من الأسود الملكي (Slate-900)
+        { offset: 1, color: '#2563eb' }, // يتدرج بنعومة نحو الأزرق الاستثماري الهادئ
       ],
     },
   },
@@ -142,15 +142,14 @@ const qrCode = new QRCodeStyling({
     color: '#ffffff',
   },
   cornersSquareOptions: {
-    type: 'extra-rounded', // تدوير الزوايا المربعة الثلاثة الكبيرة المحيطة بالباركود لتتناسق مع النقاط الداخلية
-    color: '#1e3a8a',
+    type: 'dot', // جعل إطار الزاوية الخارجي دائرياً بشكل ناعم ومتناسق مع النقاط الداخلية
+    color: '#0f172a',
   },
   cornersDotOptions: {
-    type: 'dot', // جعل النقاط الداخلية للزوايا دائرية بالكامل لتضفي جمالاً إضافياً
-    color: '#3b82f6',
+    type: 'dot', // النقطة الداخلية للزاوية دائرية صريحة ومتزنة
+    color: '#2563eb',
   },
 })
-
 // حقن وتوليد الباركود داخل الـ DOM فور اكتمال تحميل الشاشة
 onMounted(() => {
   const container = document.getElementById('qr-canvas-container')
