@@ -84,7 +84,7 @@
           v-for="(product, index) in filteredProducts"
           :key="product.id"
           :style="{ transitionDelay: `${index * 40}ms` }"
-          class="group relative bg-gradient-to-b from-gray-900/60 to-gray-950/80 backdrop-blur-md rounded-xl border border-gray-800/80 overflow-hidden hover:border-amber-500/40 transition-all duration-300 flex flex-col"
+          class="group relative bg-gradient-to-b from-gray-900/40 to-gray-950/80 backdrop-blur-md rounded-xl border border-gray-800/80 overflow-hidden hover:border-amber-500/30 transition-all duration-300 flex flex-col"
         >
           <div
             class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-amber-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 pointer-events-none"
@@ -117,13 +117,13 @@
           <div class="p-3 z-10 flex-1 flex flex-col justify-between bg-gray-950/30">
             <div>
               <h3
-                class="text-xs font-black text-gray-100 group-hover:text-amber-400 transition-colors duration-300 line-clamp-1 sm:text-base"
+                class="text-xs font-black text-amber-100/90 glow-text group-hover:text-amber-400 transition-colors duration-300 line-clamp-1 sm:text-base"
               >
                 {{ product.name }}
               </h3>
               <p
                 v-if="product.description"
-                class="text-[10px] text-gray-400 mt-1 leading-relaxed line-clamp-2 opacity-80 sm:text-xs sm:mt-1.5"
+                class="text-[10px] text-gray-400 mt-1 leading-relaxed line-clamp-2 opacity-75 sm:text-xs sm:mt-1.5"
               >
                 {{ product.description }}
               </p>
@@ -217,5 +217,17 @@ const filteredProducts = computed(() => {
   opacity: 0;
   transform: translateY(-12px) scale(0.98);
   position: absolute;
+}
+
+/* تأثير النص المضيء المتوهج (Glowing Text Shadow Effect) */
+.glow-text {
+  text-shadow:
+    0 0 4px rgba(251, 191, 36, 0.2),
+    0 0 12px rgba(245, 158, 11, 0.1);
+}
+.group:hover .glow-text {
+  text-shadow:
+    0 0 6px rgba(251, 191, 36, 0.5),
+    0 0 18px rgba(245, 158, 11, 0.3);
 }
 </style>
